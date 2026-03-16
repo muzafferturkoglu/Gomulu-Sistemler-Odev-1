@@ -30,11 +30,8 @@
         {
             "type": "shell",
             "label": "Program Memory",
-            "command": "openocd.exe",
+            "command": "openocd.exe -f interface/stlink.cfg -f target/stm32f1x.cfg -c \"program build/${workspaceRootFolderName}.elf verify reset exit\"",
             "args": [
-                "-f", "interface/stlink.cfg",
-                "-f", "target/stm32f1x.cfg",
-                "-c", "program build/${workspaceFolderBasename}.elf verify reset exit"
             ],
             "options": {
                 "cwd": "${workspaceRoot}"
